@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "house-a9f8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "house-a9f8"
+  template:
+    metadata:
+      labels:
+        app: "house-a9f8"
+    spec:
+      containers:
+        - name: "house-a9f8"
+          image: "vtsc123.azurecr.io/house"
+          ports:
+          - containerPort: 5000
